@@ -14,20 +14,16 @@ heap_t *heap_insert(heap_t **root, int value)
 {
 	heap_t *node, *parent;
 
-	if (*root == NULL)
-	{
+	if (*root == NULL){
 		node = binary_tree_node(*root, value);
 		*root = node;
 		return (*root);
 	}
 	node = *root;
-	while (node != NULL)
-	{
+	while (node != NULL){
 		parent = node;
-		/* Ignore duplicates */
 		if (node->n == value){
-            while (node && node->parent)
-                {
+            while (node && node->parent){
                     while (node->n > node->parent->n)
                     {
                         node = node->parent;
@@ -42,13 +38,11 @@ heap_t *heap_insert(heap_t **root, int value)
 		else
 			node = node->right;
 	}
-	if (value > parent->n)
-	{
+	if (value > parent->n){
 		parent->left = binary_tree_node(parent, value);
 		return (parent->left);
 	}
-	else
-	{
+	else{
 		parent->right = binary_tree_node(parent, value);
 		return (parent->right);
 	}
