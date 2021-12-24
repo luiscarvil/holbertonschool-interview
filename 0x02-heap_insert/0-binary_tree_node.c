@@ -1,31 +1,26 @@
 #include "binary_trees.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
- * heap_insert - Creates a binary tree node
+ * binary_tree_node - creates a binary tree node
+ * @parent: pointer to the parent node of the node to create
+ * @value: value to put in the new node
  *
- * @parent: Pointer to the parent node of the node to create
- * 
- * @value:  Value to put in the new node
- * 
- * Return: A tree with max heap ordering
+ * Return: a pointer to the new node or NULL on failure
  */
-
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
-	binary_tree_t *new_node = malloc(sizeof(binary_tree_t));
+	binary_tree_t *new;
 
-	if (!new_node)
+	new = malloc(sizeof(binary_tree_t));
+	if (!new)
 	{
 		return (NULL);
 	}
 
-	new_node->n = value;
-
-	new_node->parent = parent;
-	new_node->left = NULL;
-	new_node->right = NULL;
-
-	return (new_node);
+	new->n = value;
+	new->parent = parent;
+	new->left = NULL;
+	new->right = NULL;
+	return (new);
 }
