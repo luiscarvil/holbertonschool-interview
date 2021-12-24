@@ -1,4 +1,6 @@
 #include "binary_trees.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * heap_insert - Creates a binary tree node
