@@ -1,1 +1,1 @@
-Nqueens tasks
+nqueens 
